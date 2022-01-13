@@ -1,0 +1,66 @@
+﻿@model List<Aluno>
+
+@{
+    ViewBag.Title = "Aluno";
+}
+
+<br />
+
+<h3>Aluno</h3>
+
+
+
+<div id="accordion">
+    @foreach (var aluno in @Model)
+    {
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_@aluno.IdAluno" aria-expanded="true" aria-controls="collapseOne">
+                        @aluno.Nome
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapse_@aluno.IdAluno" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <label>RA: </label> @aluno.RA
+                    <br/>
+                    <label>Data de Nascimento: </label> @aluno.DtNascimento.ToString("dd/MM/yyyy")
+                    <br/>
+                    <br/>
+
+                    <div class="card-footer">
+                   <a href="#" onclick="loadDoc('@Url.Action("Index","Disciplina", new {idAluno = @aluno.IdAluno, nomeAluno = @aluno.Nome})','GET')">Disciplina</a>
+                   </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div id="demo"></div>
+
+
+
+<!--Modal Informações Disciplinas dos Alunos
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Disciplinas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+data-toggle="modal" data-target="#myModal"
+-->

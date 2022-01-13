@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "cadastrarAluno";
+}
+
+<h2>Cadastrar</h2>
+
+<form action="@Url.Action("cadastrarAluno","Aluno")" method="post">
+    <fieldset>
+        <legend>Nova Aluno</legend>
+        @if (!string.IsNullOrEmpty(ViewBag.sucesso))
+        {
+            <div class="alert alert-success">
+                <strong>Sucesso!!</strong> Aluno cadastrado com sucesso.
+        </div>
+        }
+        <div>
+            <label for = "Nome">Nome:</label>
+        </div>
+        <div>
+            <input type = "text" id="Nome" name="Nome"/>
+        </div>
+
+        <div>
+            <label for="RA">RA:</label>
+        </div>
+        <div>
+            <input type="text" id="RA" name="RA"/>
+        </div>
+
+        <div>
+            <label for="DtNascimento">DtNascimento:</label>
+        </div>
+        <div>
+            <input type="text" id="DtNascimento" name="DtNascimento"/>
+        </div>
+        <br/>
+        <input type="submit" class= "btn btn-success" value="Cadastrar Aluno" />
+    </fieldset>
+</form>

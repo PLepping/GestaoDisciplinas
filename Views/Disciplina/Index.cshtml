@@ -1,0 +1,33 @@
+﻿@model List<Disciplina>
+
+@{
+    ViewBag.Title = "Disciplina";
+}
+<h2>Disciplinas</h2>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Cod.Disciplina</td>
+            <td>Nome do Aluno</td>
+            <td>Nome da Disciplina</td>
+            <td>Semestre</td>
+            <td>Curso</td>
+            <td>Gerenciar</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var disciplina in @Model)
+        {
+            <tr>
+                <td>@disciplina.IdDisciplina</td>
+                <td>@ViewBag.nomeAluno</td>
+                <td>@disciplina.Nome</td>
+                <td>@disciplina.Semestre</td>
+                <td>@disciplina.Curso</td>
+                <td><button onclick="loadDoc('@Url.Action("Index","Disciplina", new {idAluno = @disciplina.IdAluno, idDisciplina = @disciplina.IdDisciplina, nomeAluno = @ViewBag.nomeAluno })','POST')" type="button" class="btn btn-danger">Excluir</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

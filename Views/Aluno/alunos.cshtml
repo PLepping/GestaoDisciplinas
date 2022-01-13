@@ -1,0 +1,43 @@
+﻿@model List<Aluno>
+
+@{
+    ViewBag.Title = "listarAluno";
+}
+
+<h2>
+    Disciplinas
+    <a href="@Url.Action("cadastrarAluno","Aluno")" class="btn btn-primary">Cadastrar Aluno</a>
+</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Cod.Aluno</td>
+            <td>Nome do Aluno</td>
+            <td>RA </td>
+            <td>Data de Nascimento</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var aluno in @Model)
+        {
+            <tr>
+                <td>@aluno.IdAluno</td>
+                <td>@aluno.Nome</td>
+
+                <td>
+
+                    @foreach (var disciplina in aluno.AlunoDisciplinas)
+                    {
+                        @disciplina.IdDisciplina <b>-</b>
+                        @disciplina.IdAluno
+                    }
+
+
+                </td>
+                <td>@aluno.RA</td>
+                <td>@aluno.DtNascimento</td>
+            </tr>
+        }
+    </tbody>
+</table>
