@@ -53,6 +53,7 @@ namespace GestaoEscolar.Models
                                                sqlRead["Curso"].ToString()));
             }
             return Disciplinas;
+            minhaConexao.Close();
         }
 
         public static List<Disciplina> listarDisciplinas()
@@ -74,6 +75,7 @@ namespace GestaoEscolar.Models
                                                sqlRead["Curso"].ToString()));
             }
             return Disciplinas;
+            minhaConexao.Close();
         }
 
 
@@ -87,6 +89,7 @@ namespace GestaoEscolar.Models
             selectCommand.ExecuteNonQuery();
 
             return "Sucesso";
+            minhaConexao.Close();
         }
 
         public static string excluirDisciplina(int idAluno, int idDisciplina)
@@ -99,6 +102,7 @@ namespace GestaoEscolar.Models
             selectCommand.ExecuteNonQuery();
 
             return "Sucesso";
+            minhaConexao.Close();
         }
     }
 }

@@ -40,6 +40,7 @@ namespace GestaoEscolar.Models
                                      Convert.ToDateTime(sqlRead["DtNascimento"].ToString())));
             }
             return Alunos;
+            minhaConexao.Close();
         }
 
         public static List<Aluno> listarAlunosPelaDisciplina(int idDisciplina)
@@ -60,6 +61,7 @@ namespace GestaoEscolar.Models
                                      Convert.ToDateTime(sqlRead["DtNascimento"].ToString())));
             }
             return Alunos;
+            minhaConexao.Close();
         }
 
        /* public static string cadastrarAluno(string nome, string ra, string dtNascimento)
