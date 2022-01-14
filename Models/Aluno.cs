@@ -13,7 +13,7 @@ namespace GestaoEscolar.Models
         public DateTime DtNascimento { get; set; }
 
         public virtual ICollection<Disciplina> AlunoDisciplinas { get; set; }
-
+        
         public Aluno(int idAluno, string nome, int ra, DateTime dtNascimento)
         {
             IdAluno = idAluno;
