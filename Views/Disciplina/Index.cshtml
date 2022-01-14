@@ -1,7 +1,7 @@
 ﻿@model List<Disciplina>
 
 @{
-    ViewBag.Title = "Disciplina";
+    ViewBag.Title = "Alunos/Disciplinas";
 }
 <h2>Disciplinas</h2>
 
@@ -9,20 +9,20 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <td>Cod.Disciplina</td>
-            <td>Nome do Aluno</td>
-            <td>Nome da Disciplina</td>
-            <td>Semestre</td>
-            <td>Curso</td>
-            <td>Gerenciar</td>
+            <td><b>Nome do Aluno</b></td>
+            <td><b>Cod.Disciplina</b></td>
+            <td><b>Nome da Disciplina</b></td>
+            <td><b>Ano</b></td>
+            <td><b>Curso</b></td>
+            <td><b>Gerenciar</b></td>
         </tr>
     </thead>
     <tbody>
         @foreach(var disciplina in @Model)
         {
             <tr>
-                <td>@disciplina.IdDisciplina</td>
                 <td>@ViewBag.nomeAluno</td>
+                <td>@disciplina.IdDisciplina</td>
                 <td>@disciplina.Nome</td>
                 <td>@disciplina.Semestre</td>
                 <td>@disciplina.Curso</td>

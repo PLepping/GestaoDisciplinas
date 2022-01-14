@@ -1,21 +1,26 @@
 ﻿@model List<Disciplina>
 
 @{
-    ViewBag.Title = "listarDisciplina";
+    ViewBag.Title = "Lista de Disciplinas";
 }
+<br />
+<br />
 
-<h2>Disciplinas
+<h1>Disciplinas
+    <br />
     <a  href = "@Url.Action("cadastrarDisciplina","Disciplina")" class = "btn btn-primary">Cadastrar Disciplina</a>
-</h2>
+</h1>
+<br />
+<br />
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <td>Cod.Disciplina</td>
-            <td>Nome da Disciplina</td>
-            <td>Alunos - RA </td>
-            <td>Semestre</td>
-            <td>Curso</td>
+            <td><b>Cod.Disciplina</b></td>
+            <td><b>Nome da Disciplina</b></td>
+            <td><b>Alunos - RA </b></td>
+            <td><b>Ano</b></td>
+            <td><b>Curso</b></td>
         </tr>
     </thead>
     <tbody>

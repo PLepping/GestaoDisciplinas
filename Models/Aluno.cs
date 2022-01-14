@@ -62,7 +62,7 @@ namespace GestaoEscolar.Models
             return Alunos;
         }
 
-        public static string cadastrarAluno(string nome, string ra, string dtNascimento)
+       /* public static string cadastrarAluno(string nome, string ra, string dtNascimento)
         {
             SqlConnection minhaConexao = new SqlConnection("Data Source = localhost; initial Catalog = GestaoEscolar; User ID = sa; password = @D9y3v6w4@; Integrated Security = True");
             minhaConexao.Open();
@@ -84,6 +84,6 @@ namespace GestaoEscolar.Models
             selectCommand.ExecuteNonQuery();
 
             return "Sucesso";
-        }
+        }*/
     }
 }

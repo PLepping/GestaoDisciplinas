@@ -19,7 +19,7 @@ namespace GestaoEscolar.Controllers
         [HttpPost]
         public IActionResult Index(int idAluno, int idDisciplina, string nomeAluno)
         {
-            string exclusao = Aluno.excluirAluno(idAluno);
+            //string exclusao = Aluno.excluirAluno(idAluno);
             //ViewBag.nomeAluno = nomeAluno;
             List<Aluno> Alunos = Aluno.listarAlunosPelaDisciplina(idAluno);
 
@@ -32,18 +32,19 @@ namespace GestaoEscolar.Controllers
             return View(Alunos);
         }
 
-        public IActionResult cadastrarAluno()
+       /* public IActionResult cadastrarAluno()
         {
             return View();
-        }
+        }*/
 
+        /*
         [HttpPost]
         public IActionResult cadastrarAluno(string Nome, string RA, string DtNascimento)
         {
-            string sucesso = Aluno.cadastrarAluno(Nome, RA, DtNascimento);
+            //string sucesso = Aluno.cadastrarAluno(Nome, RA, DtNascimento);
 
             ViewBag.sucesso = sucesso;
             return View();
-        }
+        }*/
     }
 }
