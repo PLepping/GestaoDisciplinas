@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.Data.SqlClient;
 
 namespace GestaoEscolar.Models
@@ -7,12 +8,13 @@ namespace GestaoEscolar.Models
     {
         [Key]
         public int IdDisciplina { get; set; }
+        [NotMapped]
         public int? IdAluno { get; set; }
         public string Nome { get; set; }
         public string Semestre { get; set; }
         public string Curso { get; set; }
         public virtual ICollection<AlunoDisciplina> AlunoDisciplinas { get; set; }
-        public List<Aluno> Alunos { get; set; }
+        public virtual List<Aluno> Alunos { get; set; }
 
         public Disciplina(int iddisciplina, int idaluno, string nome, string semestre, string curso)
         {
@@ -31,6 +33,11 @@ namespace GestaoEscolar.Models
             Semestre = semestre;
             Curso = curso;
             Alunos = Aluno.listarAlunosPelaDisciplina(iddisciplina);
+        }
+
+        public Disciplina()
+        {
+
         }
 
         public static List<Disciplina> listarDisciplinasPeloAluno(int idAluno)
@@ -90,6 +97,7 @@ namespace GestaoEscolar.Models
 
             return "Sucesso";
             minhaConexao.Close();
+            /**/
         }
 
         public static string excluirDisciplina(int idAluno, int idDisciplina)

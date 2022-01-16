@@ -15,5 +15,12 @@ namespace GestaoEscolar.Models
         public int IdDisciplina { get; set; }
         public  virtual Disciplina Disciplina { get; set; }
 
+
+        public AlunoDisciplina()
+        {
+
+        }
     }
+
+    
 }

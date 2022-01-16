@@ -30,6 +30,36 @@ namespace GestaoEscolar.Controllers
 
         public IActionResult disciplinas()
         {
+            Contexto db = new Contexto();
+            /*db.Disciplinas.Add(new Disciplina()
+            {
+                Nome = "Estruturas de Dados III",
+                Semestre = Semestre,
+                Curso = "BCC"
+            }); 
+            db.SaveChanges();*/
+
+            /*var disciplinas = db.Disciplinas.ToList();
+            var disciplina = disciplinas.Where(x => x.IdDisciplina == 20).FirstOrDefault();
+            disciplina.Nome = "novoNome";
+            db.SaveChanges();
+            db.Disciplinas.Remove(disciplina);
+            db.SaveChanges();*/
+
+            var disciplina = db.Disciplinas.Where(x => x.IdDisciplina == 19).FirstOrDefault();
+
+            var aluno = db.Alunos.Where((x) => x.IdAluno == 5).FirstOrDefault();
+            var alunoDisciplina = new AlunoDisciplina()
+            {
+                IdAluno = aluno.IdAluno,
+                Aluno = aluno,
+                Disciplina =disciplina,
+                IdDisciplina = disciplina.IdDisciplina
+            };
+            disciplina.AlunoDisciplinas.Add(alunoDisciplina);
+            db.SaveChanges();
+
+
             List<Disciplina> Disciplinas = Disciplina.listarDisciplinas();
             return View(Disciplinas);
         }

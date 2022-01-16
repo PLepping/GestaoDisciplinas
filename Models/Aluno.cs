@@ -22,6 +22,11 @@ namespace GestaoEscolar.Models
             DtNascimento = dtNascimento;
         }
 
+        public Aluno()
+        {
+
+        }
+
         public static List<Aluno> listarAlunos()
         {
             SqlConnection minhaConexao = new SqlConnection("Data Source = localhost; initial Catalog = GestaoEscolar; User ID = sa; password = @D9y3v6w4@; Integrated Security = True");
